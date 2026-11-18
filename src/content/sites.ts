@@ -81,8 +81,17 @@ export const SITES: Site[] = [
     id: 'kick',
     name: 'Kick',
     hosts: ['kick.com'],
-    items: ['[data-testid="livestream-card"]', '[data-chat-entry]', '[data-testid="video-card"]'],
+    // Checked against kick.com category pages: stream cards use these test ids.
+    items: ['[data-testid="livestream-results-card"]', '[data-testid="media-card"]'],
     attrs: [],
+  },
+  {
+    id: 'instagram',
+    name: 'Instagram',
+    hosts: ['instagram.com'],
+    // Feed posts, plus grid tiles on explore/search/profile pages (the tile's alt text is read via attrs).
+    items: ['article', 'a[href^="/p/"]', 'a[href^="/reel/"]'],
+    attrs: ['aria-label'],
   },
 ];
 

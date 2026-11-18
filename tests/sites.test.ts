@@ -11,6 +11,7 @@ test('findSite matches domains and subdomains only', () => {
   assert.equal(findSite('www.facebook.com')?.id, 'facebook');
   assert.equal(findSite('www.twitch.tv')?.id, 'twitch');
   assert.equal(findSite('kick.com')?.id, 'kick');
+  assert.equal(findSite('www.instagram.com')?.id, 'instagram');
   assert.equal(findSite('notyoutube.com'), null);
   assert.equal(findSite('example.com'), null);
 });
